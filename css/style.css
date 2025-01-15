@@ -1,0 +1,254 @@
+:root {
+	--green: rgb(42, 252, 152);
+	--blue: rgb(41, 121, 255);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@keyframes float {
+	from,
+	to {
+		transform: translateY(-0%);
+	}
+
+	50% {
+		transform: translateY(-3%);
+	}
+}
+
+@keyframes background-pan {
+	from {
+		background-position: 1000% center;
+	}
+
+	to {
+		background-position: 0% center;
+	}
+}
+
+body {
+	height: 100vh;
+	background-color: black;
+	margin: 0rem;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+}
+
+.line {
+	display: flex;
+	justify-content: space-between;
+}
+
+.text-and-link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.word {
+	color: white;
+	font-size: clamp(2rem, 8vw, 10rem);
+	font-family: "Rubik", sans-serif;
+	margin: 0rem;
+	text-transform: uppercase;
+	transition: opacity 250ms ease;
+}
+
+a {
+	text-decoration: none;
+}
+
+.text:has(.fancy:hover) .word:not(.fancy:hover) {
+	opacity: 0.2;
+}
+
+.fancy span {
+	display: inline-block;
+}
+
+.fancy > .outer {
+	transition: transform 350ms ease;
+}
+
+.fancy:hover > .outer {
+	transition-duration: 800ms;
+}
+
+.fancy:hover > .outer > .inner {
+	animation: float 5s ease infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(
+		circle,
+		rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%
+	);
+	background-size: 1000%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: background-pan 150s linear infinite;
+}
+
+.fancy:hover > .outer:nth-child(1) {
+	transform: translate(-40%, 30%) rotate(4deg);
+}
+
+.fancy:hover > .outer:nth-child(2) {
+	transform: translate(-20%, 10%) rotate(2deg);
+}
+
+.fancy:hover > .outer:nth-child(3) {
+	transform: translate(-5%, 30%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(4) {
+	transform: translate(0%, 4%) rotate(-4deg);
+}
+
+.fancy:hover > .outer:nth-child(5) {
+	transform: translate(0%, -10%) rotate(2.5deg);
+}
+
+.fancy:hover > .outer:nth-child(6) {
+	transform: translate(0%, 10%) rotate(-1.5deg);
+}
+
+.fancy:hover > .outer:nth-child(7) {
+	transform: translate(0%, -20%) rotate(-2.5deg);
+}
+
+.fancy:hover > .outer:nth-child(8) {
+	transform: translate(0%, 7.5%) rotate(5deg);
+}
+
+.fancy:hover > .outer:nth-child(9) {
+	transform: translate(0%, -25%) rotate(4deg);
+}
+
+.fancy:hover > .outer:nth-child(10) {
+	transform: translate(0%, 7.5%) rotate(-3deg);
+}
+
+.fancy:hover > .outer:nth-child(11) {
+	transform: translate(25%, -5%) rotate(-1.5deg);
+}
+
+.fancy:hover > .outer:nth-child(12) {
+	transform: translate(60%, -15%) rotate(-5deg);
+}
+
+/* -- Link Styles -- */
+
+.links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 40px;
+}
+
+body.menu-toggled > .meta-link > span {
+	color: rgb(30, 30, 30);
+}
+
+#inspire-link > i {
+	color: rgb(94, 106, 210);
+}
+
+#linked-link > i {
+	color: rgb(18, 101, 174);
+}
+
+#lund-link > i {
+	color: rgb(208, 118, 21);
+}
+
+#lund-logo {
+	height: 25px;
+}
+
+#orcid-link > i {
+	color: rgb(239, 83, 80);
+}
+
+.meta-link {
+	align-items: center;
+	backdrop-filter: blur(3px);
+	background-color: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 6px;
+	bottom: 10px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: inline-flex;
+	gap: 5px;
+	left: 10px;
+	padding: 10px 20px;
+	/* position: fixed; */
+	text-decoration: none;
+	transition: background-color 400ms, border-color 400ms;
+	z-index: 10000;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.meta-link:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #4b0cb7;
+	box-shadow: 0 0 5px #4d06f2;
+}
+
+.meta-link > i,
+.meta-link > span {
+	height: 20px;
+	line-height: 20px;
+}
+
+.meta-link > span {
+	color: white;
+	font-family: "Rubik", sans-serif;
+	font-weight: 500;
+}
+
+@media (max-width: 940px) {
+	.links {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.meta-link {
+		margin: 10px 5vw 5px 5vw;
+		width: 20vw;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 500px) {
+	.links {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 10px;
+		margin-top: 5vh;
+	}
+
+	.meta-link {
+		margin: 10px 5vw 5px 5vw;
+		width: 40vw;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.text {
+		display: grid;
+		grid-gap: 10px;
+	}
+}

@@ -91,6 +91,7 @@ a {
 	);
 	background-size: 1000%;
 	-webkit-background-clip: text;
+	background-clip: text; /* Standard property for modern browsers */
 	-webkit-text-fill-color: transparent;
 	animation: background-pan 150s linear infinite;
 }
@@ -150,10 +151,6 @@ a {
 	align-items: center;
 	justify-content: center;
 	padding-top: 40px;
-}
-
-body.menu-toggled > .meta-link > span {
-	color: rgb(30, 30, 30);
 }
 
 #inspire-link > i {

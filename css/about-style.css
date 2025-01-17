@@ -1,0 +1,233 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--gradient-opacity: 0.8;
+}
+
+html,
+body {
+	overscroll-behavior: none;
+	background-color: #111;
+	font-family: "Rubik", sans-serif;
+	color: #fff;
+}
+
+section {
+	width: 100%;
+	/* min-height: 600px; */
+	display: flex;
+	justify-content: center;
+	padding-left: 10%;
+	/* border: 1px solid gray; */
+	/* padding-top: 5%; */
+}
+
+img {
+	width: 100%;
+}
+
+h3.sub-descr {
+	font-size: 1.2rem; /* Small size */
+	font-weight: normal; /* Not bold */
+	transition: text-shadow 0.3s ease; /* Smooth transition for glow effect */
+}
+
+/* Glow effect on hover */
+h3.sub-descr:hover {
+	/* text-shadow: 0 0 8px rgba(0, 0, 0, 0.3); Subtle glow effect */
+	text-shadow: 0 0 5px rgb(255, 255, 255); /* Bright red glow */
+}
+
+.container {
+	width: 60%;
+	padding: 8% 0 8% 0;
+	display: grid;
+	/* border: 1px solid gray; */
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.container.main-container {
+	margin: 2% 0 2% 0%;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.line {
+	opacity: 0;
+	font-size: clamp(1rem, 3vw, 3rem);
+	transform: translateY(
+		20px
+	); /* Start the text slightly below its final position */
+	animation: slideUp 0.7s ease forwards;
+}
+
+.line:nth-child(1) {
+	animation-delay: 0s;
+}
+.line:nth-child(2) {
+	animation-delay: 0.5s;
+}
+.line:nth-child(3) {
+	animation-delay: 1s;
+}
+.line:nth-child(4) {
+	animation-delay: 1.5s;
+}
+.line:nth-child(5) {
+	animation-delay: 2s;
+}
+.line:nth-child(6) {
+	animation-delay: 0s;
+}
+.line:nth-child(7) {
+	animation-delay: 2.5s;
+}
+.line:nth-child(8) {
+	animation-delay: 3s;
+}
+.line:nth-child(9) {
+	animation-delay: 3.5s;
+}
+.line:nth-child(10) {
+	animation-delay: 4s;
+}
+.line:nth-child(11) {
+	animation-delay: 4.5s;
+}
+
+.line.spacing {
+	height: 1.5em; /* Adjust the height as needed */
+	opacity: 0; /* Hide the spacing element */
+	animation: none; /* Disable animation for this element */
+}
+
+@keyframes slideUp {
+	to {
+		opacity: 1; /* Fully visible when the text is in place */
+		transform: translateY(0); /* Move the text to its original position */
+	}
+}
+
+@keyframes slideUp {
+	to {
+		opacity: 1;
+		transform: translateY(0); /* Move the text to its original position */
+	}
+}
+
+.container h2 {
+	font-size: clamp(1rem, 3vw, 3rem);
+}
+
+.container ul {
+	padding: 0;
+	padding-left: 15%;
+	list-style: square;
+	list-style: none;
+}
+
+.container li {
+	padding-top: 6%;
+}
+
+.container li p {
+	font-size: clamp(0.5rem, 3vw, 2rem); /* Responsive font size */
+	background-clip: text; /* Clip the gradient to the text */
+	-webkit-background-clip: text; /* For Webkit browsers */
+	color: transparent; /* Make the text transparent to show the gradient */
+}
+
+.container li p.mipt {
+	background-image: linear-gradient(90deg, #f5f5f5, #0781d8, #0781d8);
+}
+.container li p.lund {
+	background-image: linear-gradient(90deg, #f5f5f5, #ef6d03, #ef6d03);
+}
+.container li p.darmstadt {
+	background-image: linear-gradient(90deg, #f5f5f5, #e8af03, #e0b804);
+}
+.container li p.inr {
+	background-image: linear-gradient(90deg, #818496, #f05d23, #ffae40);
+}
+
+.container li .sub-info {
+	color: #ffffff; /* Default text color for fallback */
+	font-size: clamp(0.3rem, 4vw, 0.8rem); /* Responsive font size */
+	background: linear-gradient(90deg, #333, #555, #777, #999, #555, #333);
+	background-size: 400% 400%; /* Larger background for smooth animation */
+	-webkit-background-clip: text; /* Clip gradient to the text */
+	color: transparent; /* Make text transparent */
+	animation: gradient-move 8s infinite; /* Apply the animation */
+}
+
+/* Define the moving gradient animation */
+@keyframes gradient-move {
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+/* Minimap */
+
+.minimap__container {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	min-width: 20px;
+	z-index: 100;
+}
+
+.minimap__size {
+	position: relative;
+	z-index: 5;
+	border: 3px solid #111;
+}
+
+.minimap__viewer {
+	width: 80%;
+	position: absolute;
+	top: 0;
+	left: 15%;
+	transform-origin: 0 0;
+	z-index: 100;
+	border: 1px solid gray;
+}
+
+.minimap__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 2px); /* Adjust for rounding errors or borders */
+	height: calc(100% - 2px);
+	z-index: -1;
+	transform-origin: 0 0;
+	color: #fff;
+	border: 1px solid #111;
+}
+
+/*  */
+.blink {
+	animation: blink 0.5s infinite;
+}
+@keyframes blink {
+	to {
+		opacity: 0;
+	}
+}
+.flex {
+	display: flex;
+}
+.header-sub-title {
+	color: #fff;
+	padding: 0.1em;
+}

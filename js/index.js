@@ -33,4 +33,6 @@ const enhance = (id) => {
 	});
 };
 
-enhance("channel-link");
+// enhance("git-link");
+// enhance("cv-link");
+enhance("about-link");

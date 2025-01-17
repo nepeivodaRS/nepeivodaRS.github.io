@@ -211,7 +211,7 @@ h3.sub-descr:hover {
 	border: 1px solid #111;
 }
 
-/*  */
+/* Typing effect */
 .blink {
 	animation: blink 0.5s infinite;
 }

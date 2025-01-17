@@ -31,15 +31,14 @@ img {
 }
 
 h3.sub-descr {
-	font-size: 1.2rem; /* Small size */
-	font-weight: normal; /* Not bold */
-	transition: text-shadow 0.3s ease; /* Smooth transition for glow effect */
+	font-size: clamp(0.3rem, 2vw, 1.5rem);
+	font-weight: normal;
+	transition: text-shadow 0.3s ease;
 }
 
 /* Glow effect on hover */
 h3.sub-descr:hover {
-	/* text-shadow: 0 0 8px rgba(0, 0, 0, 0.3); Subtle glow effect */
-	text-shadow: 0 0 5px rgb(255, 255, 255); /* Bright red glow */
+	text-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
 .container {
@@ -58,7 +57,7 @@ h3.sub-descr:hover {
 
 .line {
 	opacity: 0;
-	font-size: clamp(1rem, 3vw, 3rem);
+	font-size: clamp(0.1rem, 3vw, 3rem);
 	transform: translateY(
 		20px
 	); /* Start the text slightly below its final position */
@@ -100,27 +99,27 @@ h3.sub-descr:hover {
 }
 
 .line.spacing {
-	height: 1.5em; /* Adjust the height as needed */
-	opacity: 0; /* Hide the spacing element */
-	animation: none; /* Disable animation for this element */
+	height: 1.5em;
+	opacity: 0;
+	animation: none;
 }
 
 @keyframes slideUp {
 	to {
-		opacity: 1; /* Fully visible when the text is in place */
-		transform: translateY(0); /* Move the text to its original position */
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
 @keyframes slideUp {
 	to {
 		opacity: 1;
-		transform: translateY(0); /* Move the text to its original position */
+		transform: translateY(0);
 	}
 }
 
 .container h2 {
-	font-size: clamp(1rem, 3vw, 3rem);
+	font-size: clamp(0.1rem, 3vw, 3rem);
 }
 
 .container ul {
@@ -135,10 +134,11 @@ h3.sub-descr:hover {
 }
 
 .container li p {
-	font-size: clamp(0.5rem, 3vw, 2rem); /* Responsive font size */
-	background-clip: text; /* Clip the gradient to the text */
-	-webkit-background-clip: text; /* For Webkit browsers */
-	color: transparent; /* Make the text transparent to show the gradient */
+	/* font-size: clamp(0.1rem, 2.4vw, 2.8rem); */
+	font-size: clamp(0.5rem, 3vw, 2rem);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
 }
 
 .container li p.mipt {
@@ -155,13 +155,13 @@ h3.sub-descr:hover {
 }
 
 .container li .sub-info {
-	color: #ffffff; /* Default text color for fallback */
-	font-size: clamp(0.3rem, 4vw, 0.8rem); /* Responsive font size */
+	color: #ffffff;
+	font-size: clamp(0.1rem, 2vw, 0.8rem);
 	background: linear-gradient(90deg, #333, #555, #777, #999, #555, #333);
-	background-size: 400% 400%; /* Larger background for smooth animation */
-	-webkit-background-clip: text; /* Clip gradient to the text */
-	color: transparent; /* Make text transparent */
-	animation: gradient-move 8s infinite; /* Apply the animation */
+	background-size: 400% 400%;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: gradient-move 8s infinite;
 }
 
 /* Define the moving gradient animation */

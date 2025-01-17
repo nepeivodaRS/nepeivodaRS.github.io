@@ -160,17 +160,6 @@ h3.sub-descr:hover {
 	animation: gradient-move 8s infinite;
 }
 
-/* Define the moving gradient animation */
-@keyframes gradient-move {
-	0%,
-	100% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-}
-
 /* Minimap */
 
 .minimap__container {

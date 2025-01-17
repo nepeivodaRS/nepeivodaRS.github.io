@@ -139,8 +139,7 @@ window.addEventListener("load", () => {
 	trackScroll();
 });
 
-// Typing
-// Typing
+// Typing effect
 const words = ["unraveling the mysteries     ", "trash-coding     "];
 let i = 0;
 let timer;

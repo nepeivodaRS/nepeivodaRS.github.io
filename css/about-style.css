@@ -160,6 +160,9 @@ h3.sub-descr:hover {
 	background: linear-gradient(90deg, #333, #555, #777, #999, #555, #333);
 	background-size: 400% 400%;
 	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 	color: transparent;
 	animation: gradient-move 8s infinite;
 }

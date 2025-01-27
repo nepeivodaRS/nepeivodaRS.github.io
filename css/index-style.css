@@ -43,15 +43,16 @@ body {
 }
 
 .text-and-link {
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .word {
 	color: white;
-	font-size: clamp(2rem, 8vw, 10rem);
+	font-size: clamp(3rem, 8vw, 10rem);
 	font-family: "Rubik", sans-serif;
 	margin: 0rem;
 	text-transform: uppercase;
